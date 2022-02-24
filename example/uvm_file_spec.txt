@@ -1,0 +1,32 @@
+little endian
+
+version uint32_t 
+
+body
+
+class
+
+
+
+endclass
+
+function
+    name
+        name string
+    end name
+    return type
+    list
+
+        args types
+
+    end list
+    function body
+
+        code
+
+    end function body
+endfunction
+
+struct
+
+endstruct
