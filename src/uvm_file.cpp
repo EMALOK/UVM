@@ -24,7 +24,7 @@ uvm_file::uvm_file(char* _file_path){
 
 void uvm_file::parse_header(){
     //version parse
-
+/*
     header.version = raw_bytes[3];
     header.version <<= 8;
     header.version += raw_bytes[2];
@@ -32,6 +32,8 @@ void uvm_file::parse_header(){
     header.version += raw_bytes[1];
     header.version <<= 8;
     header.version += raw_bytes[0];
+*/
+    uvm_version = raw_bytes[0] | (raw_bytes[1] << 8) | (raw_bytes[2] << 16) | (raw_bytes[3] << 24);
 
-    std::cout << "UVM version: " << (int)header.version << std::endl;
+    std::cout << "UVM version: " << uvm_version << std::endl;
 }

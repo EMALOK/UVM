@@ -1,32 +1,43 @@
-little endian
-
 version uint32_t 
 
 body
+    class
+        private
+            vars
 
-class
+            end_vars
+            methods
 
+            end_methods
+        end_private
+        public
+            vars
 
+            end_vars
+            methods
 
-endclass
+            end_methods
+        end_public
+    end_class
 
-function
-    name
-        name string
-    end name
-    return type
-    list
+    function
+        name
+            name_string
+        end_name
+        return type
+        list
+            args_types
+        end_list
+        function_body
 
-        args types
+            code
 
-    end list
-    function body
+        end_function_body
+    end_function
 
-        code
+    struct
+        vars
 
-    end function body
-endfunction
-
-struct
-
-endstruct
+        end_vars
+    end_struct
+end_body
