@@ -49,6 +49,4 @@ int main(int argc,char** argv){
     std::cout << "reading " << uvm_file_path << "\n"; 
 
     uvm_file uvmFile(uvm_file_path);
-
-    //push test
 }
