@@ -11,5 +11,5 @@ public:
 
 private:
 
-    void parse_header();
+    void parse_version();
 };

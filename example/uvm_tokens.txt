@@ -1,4 +1,29 @@
-//inizio deel corpo del codice
+inizio
+0b0xxxxxxx
+fine
+0b1xxxxxxx
+
+questo permette 127 token diversi
+
+per inizio token
+da 0x00 a 0x7F
+per fine token
+da 0x80 a 0xFF
+
+direi di riservare i token 0x00 e 0x80 perche corrispondono all'inizio e fine del token 0
+
+token da dare:
+body
+classe
+    private
+    public
+    vars
+    methods
+function
+struct
+
+
+//inizio del corpo del codice
 body
 //fine del corpo del codice
 end_body
@@ -22,10 +47,13 @@ end_class
         vars
         // fine vars
         end_vars
-        
+
         //inizio definizioni dei metodi delle classi sia publici che privati
         methods
         //fine metodi
         end_methods
 
-
+// inizio di una funzione
+function
+//fine di una funzione
+end_function
