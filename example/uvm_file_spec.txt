@@ -1,43 +1,44 @@
 version uint32_t 
-
+header
+    linked_files
+        string
+        ...
+        string
+    end_linked_files
+    file_objects
+        body_offset_definition_position uint32_t
+        ...
+        body_offset_definition_position
+    end_file_objects
+end_header
 body
     class
         private
-            vars
-
-            end_vars
-            methods
-
-            end_methods
+            
         end_private
         public
-            vars
 
-            end_vars
-            methods
-
-            end_methods
         end_public
     end_class
 
     function
-        name
-            name_string
-        end_name
-        return type
-        list
-            args_types
-        end_list
-        function_body
 
-            code
-
-        end_function_body
     end_function
 
     struct
-        vars
 
-        end_vars
     end_struct
 end_body
+
+var definition:
+
+var
+    file_index
+    file_object_index
+end_var
+
+string definition:
+
+string
+    string zero termianted
+end_string

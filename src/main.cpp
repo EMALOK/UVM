@@ -2,6 +2,7 @@
 
 #include "uvm_file.h"
 
+//#region [ rgba(0,200,0,0.1)]
 /*
 
 TODOs
@@ -19,8 +20,9 @@ TODOs
 in file pointing are relative to the father in the tree
 
 */
+//#endregion
 
-
+//#region [ rgba(0,0,200,0.1)]
 int main(int argc,char** argv){
 
 /*
@@ -50,3 +52,4 @@ int main(int argc,char** argv){
 
     uvm_file uvmFile(uvm_file_path);
 }
+//#endregion
