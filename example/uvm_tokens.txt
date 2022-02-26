@@ -14,13 +14,12 @@ da 0x80 a 0xFF
 tokens:
 0       NULL
 1       HEADER
-2       BODY
+2		BODY
 3       LIST
 4       STRING
 5       VAR
 6       FUNCTION
+7		STRUCT
 8       CLASS
 9       PRIVATE
 10      PUBLIC
-11  
-12  
