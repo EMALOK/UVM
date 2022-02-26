@@ -10,5 +10,5 @@ enum uvm_token {
     STRUCT = 7,
     CLASS = 8,
     PRIVATE = 9,
-    PUBLIC = 10,
+    PUBLIC = 10
 };
