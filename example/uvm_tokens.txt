@@ -10,50 +10,18 @@ da 0x00 a 0x7F
 per fine token
 da 0x80 a 0xFF
 
-direi di riservare i token 0x00 e 0x80 perche corrispondono all'inizio e fine del token 0
 
-token da dare:
-body
-classe
-    private
-    public
-    vars
-    methods
-function
-struct
-
-
-//inizio del corpo del codice
-body
-//fine del corpo del codice
-end_body
-
-//inizio di una classe
-class
-//fine di una classe
-end_class
-
-    //inizio sezione privata per le classi
-    private
-    //fine sezione privata
-    end_private
-
-    //inizio sezione publica per le classi
-    public
-    //fine sezione publica
-    end_public
-
-        //inizio sezioni per variabili sia per sezioni publiche che private
-        vars
-        // fine vars
-        end_vars
-
-        //inizio definizioni dei metodi delle classi sia publici che privati
-        methods
-        //fine metodi
-        end_methods
-
-// inizio di una funzione
-function
-//fine di una funzione
-end_function
+tokens:
+0       NULL
+1       HEADER
+2       BODY
+3       LIST
+4       STRING
+5       VAR
+6       FUNCTION
+7       CLASS
+8       PRIVATE
+9       PUBLIC
+10      STRUCT
+11  
+12  

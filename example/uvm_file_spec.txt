@@ -1,23 +1,29 @@
 version uint32_t 
 header
-    linked_files
-        string
-        ...
-        string
-    end_linked_files
-    file_objects
-        body_offset_definition_position uint32_t
-        ...
+    list of string
+        file_path_of_dependencies
+    end_list
+    list of uint32_t
         body_offset_definition_position
-    end_file_objects
+    end_list
 end_header
 body
     class
         private
-            
+            list of vars
+                vars
+            end_list
+            list of functions
+                functions
+            end_list
         end_private
         public
-
+            list of vars
+                vars
+            end_list
+            list of functions
+                functions
+            end_list
         end_public
     end_class
 
@@ -32,9 +38,11 @@ end_body
 
 var definition:
 
+//can point to any object in the header class struct and functions
+
 var
-    file_index
-    file_object_index
+    file_index          uint32_t
+    file_object_index   uint32_t
 end_var
 
 string definition:
@@ -42,3 +50,22 @@ string definition:
 string
     string zero termianted
 end_string
+
+list definition:
+
+list of T
+    list length uint32_t
+    T
+    ...
+    T
+end_list
+
+function definition:
+
+function
+    var return type
+    list of var
+        args_types
+    end_list
+    string name
+end_function
