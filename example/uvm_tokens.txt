@@ -19,9 +19,8 @@ tokens:
 4       STRING
 5       VAR
 6       FUNCTION
-7       CLASS
-8       PRIVATE
-9       PUBLIC
-10      STRUCT
+8       CLASS
+9       PRIVATE
+10      PUBLIC
 11  
 12  
