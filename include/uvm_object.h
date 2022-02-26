@@ -1,8 +1,9 @@
 #include <string>
+#include "uvm_token.h"
 
 class uvm_object {
-    enum object_type{
-        FUNCTION = 6,
+    enum object_type : uint8_t{
+        FUNCTION = 6 ,
         STRUCT = 7,
         CLASS = 8
     };

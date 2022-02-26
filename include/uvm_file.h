@@ -1,3 +1,6 @@
+#include <cstddef>
+#include <cstdint>
+
 class uvm_file{
 public:
 

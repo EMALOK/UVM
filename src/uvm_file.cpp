@@ -1,8 +1,9 @@
+#include "uvm_file.h"
+
 #include <iostream>
 #include <fstream>
 
-#include "uvm_file.h"
-
+#include "uvm_object.h"
 
 uvm_file::uvm_file(char* _file_path){
     //open file
@@ -40,4 +41,12 @@ void uvm_file::parse_file(){
     parse_header();
 
     parse_body();
+}
+
+void uvm_file::parse_header(){
+
+}
+
+void uvm_file::parse_body(){
+
 }
