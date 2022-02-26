@@ -13,4 +13,7 @@ private:
 
     void parse_version();
     void parse_file();
+
+    void parse_header();
+    void parse_body();
 };

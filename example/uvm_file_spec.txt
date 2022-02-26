@@ -9,6 +9,7 @@ header
 end_header
 body
     class
+        string name
         private
             list of vars
                 vars
@@ -29,10 +30,8 @@ body
 
     function
 
-    end_function
-
     struct
-
+        string name
     end_struct
 end_body
 
@@ -63,9 +62,9 @@ end_list
 function definition:
 
 function
+    string name
     var return type
     list of var
         args_types
     end_list
-    string name
 end_function

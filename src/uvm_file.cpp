@@ -35,18 +35,9 @@ void uvm_file::parse_version(){
 void uvm_file::parse_file(){
 
     //switch based on the file version
-    std::cout << "starting parsing file using uvm version: " << uvm_version << std::endl;
+    std::cout << "starting parsing file" << std::endl;
 
-    switch (uvm_version)
-    {
-    case 0:
-    case 1:
-        break;
-    
-    default:
-        // not implemented or wrong uvm version
-        std::cout << "the version detected on the file does not match any uvm version in this VM" << std::endl;
-        break;
-    }
+    parse_header();
 
+    parse_body();
 }
