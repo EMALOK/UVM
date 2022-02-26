@@ -1,2 +1,4 @@
 #ignore compilation folder
 bin/
+#ignore object files
+*.o
