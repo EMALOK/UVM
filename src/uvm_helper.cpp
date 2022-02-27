@@ -1,5 +1,7 @@
 #include <uvm_helper.h>
 #include <iostream>
+#include <memory>
+#include <stdexcept>
 
 //#region [rgba(0,200,0,0.1)]
 // function used to convet the data from the buffer to the actual value

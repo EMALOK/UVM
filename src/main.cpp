@@ -29,7 +29,9 @@ int main(int argc,char** argv){
     // 3
     int uvm_argc = argc - 2;
 
-    std::cout << "reading " << uvm_file_path << "\n"; 
+    //std::cout << "reading " << uvm_file_path << "\n";
+    log_messagef("reading file: %s",0,uvm_file_path);
+
 
     uvm_file uvmFile(uvm_file_path);
 }
