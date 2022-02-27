@@ -1,6 +1,7 @@
 #include <iostream>
 
-#include "uvm_file.h"
+#include <uvm_file.h>
+#include <uvm_helper.h>
 
 //#region [ rgba(0,200,0,0.1)]
 /*
@@ -32,8 +33,9 @@ int main(int argc,char** argv){
 */
 
     if(argc == 1){
-        std::cout << "not enough args insert a UVM file\n";
-
+        //std::cout << "not enough args insert a UVM file\n";
+        log_error("not enough args insert a UVM file\n",0);
+        reset_console_color();
         return -1;
     }
 

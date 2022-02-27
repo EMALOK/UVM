@@ -1,3 +1,5 @@
+#pragma once
+
 // range 0 - 127
 enum uvm_token : uint8_t {
     NULL_TOKEN = 0,
@@ -12,3 +14,6 @@ enum uvm_token : uint8_t {
     PRIVATE = 9,
     PUBLIC = 10
 };
+
+uint8_t get_start_token(uvm_token token);
+uint8_t get_end_token(uvm_token token);
