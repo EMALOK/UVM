@@ -3,39 +3,6 @@
 #include <memory>
 #include <stdexcept>
 
-//#region [rgba(0,200,0,0.1)]
-// function used to convet the data from the buffer to the actual value
-
-//TODO convert using templates
-uint16_t convert_bytes_16(uint8_t* buf) {
-    uint16_t res = 0;
-    for(int i = sizeof(uint16_t) - 1;i >= 0;i--){
-        res <<= 8;
-        res += buf[i];
-    }
-    return res;
-}
-
-uint32_t convert_bytes_32(uint8_t* buf){
-    uint16_t res = 0;
-    for(int i = sizeof(uint32_t) - 1;i >= 0;i--){
-        res <<= 8;
-        res += buf[i];
-    }
-    return res;
-}
-
-uint64_t convert_bytes_64(uint8_t* buf){
-    uint16_t res = 0;
-    for(int i = sizeof(uint64_t) - 1;i >= 0;i--){
-        res <<= 8;
-        res += buf[i];
-    }
-    return res;
-}
-
-//#endregion
-
 //#region [rgba(255,69,0,0.1)]
 //logging functions
 void log_message(std::string message,uint32_t message_log_level){
@@ -72,6 +39,21 @@ void set_console_color(ansi_color FG,bool bright_FG,ansi_color BG,bool bright_BG
 
 void reset_console_color(){
     printf("%c[%d;%dm",0x1B,default_color,default_color + BG_offset);
+}
+
+//#endregion
+
+//#region [rgba(0,0,200,0.1)]
+//token utils
+
+uint8_t get_start_token(uvm_token token){
+    //set the msb to 0
+    return token & 0b01111111;
+}
+
+uint8_t get_end_token(uvm_token token){
+    //reset to 0 the msb then set it to 1
+    return (token & 0b01111111) + 0b10000000; 
 }
 
 //#endregion

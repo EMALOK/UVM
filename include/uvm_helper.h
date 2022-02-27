@@ -6,10 +6,18 @@
 //eg. ll=10 lots of messages
 static uint32_t log_level = 1;
 
-// function used to convet the data from the buffer to the actual value
-uint16_t convert_bytes_16(uint8_t* buf);
-uint32_t convert_bytes_32(uint8_t* buf);
-uint64_t convert_bytes_64(uint8_t* buf);
+template<typename T>
+T convert_bytes(uint8_t* buf){
+    T res = 0;
+    for(int i = sizeof(T) - 1;i >= 0;i--){
+        res <<= 8;
+        res += buf[i];
+    }
+    return res;
+}
+
+//#region [rgba(255,69,0,0.1)]
+//logging functions
 
 enum ansi_color : uint8_t {
     black = 30,
@@ -25,8 +33,6 @@ enum ansi_color : uint8_t {
 
 const uint8_t BG_offset = 10;
 
-//#region [rgba(255,69,0,0.1)]
-//logging functions
 void log_message(std::string message,uint32_t message_log_level);
 void log_warning(std::string message,uint32_t message_log_level);
 void log_error(std::string message,uint32_t message_log_level);
@@ -62,4 +68,28 @@ void set_console_color(ansi_color FG,ansi_color BG);
 void set_console_color(ansi_color FG,bool bright_FG,ansi_color BG,bool bright_BG);
 
 void reset_console_color();
+//#endregion
+
+//#region [rgba(0,0,200,0.1)]
+//token utils
+
+// range 0 - 127
+enum uvm_token : uint8_t {
+    NULL_TOKEN = 0,
+    HEADER = 1,
+    BODY = 2,
+    LIST = 3,
+    STRING = 4,
+    VAR = 5,
+    FUNCTION = 6,
+    STRUCT = 7,
+    CLASS = 8,
+    PRIVATE = 9,
+    PUBLIC = 10
+};
+
+uint8_t get_start_token(uvm_token token);
+
+uint8_t get_end_token(uvm_token token);
+
 //#endregion

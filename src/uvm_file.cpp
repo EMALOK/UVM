@@ -3,8 +3,6 @@
 #include <iostream>
 #include <fstream>
 
-#include <uvm_object.h>
-#include <uvm_token.h>
 #include <uvm_helper.h>
 
 uvm_file::uvm_file(char* _file_path){
@@ -30,7 +28,7 @@ uvm_file::uvm_file(char* _file_path){
 void uvm_file::parse_version(){
     //version parse
 
-    uvm_version = convert_bytes_32(raw_bytes);
+    uvm_version = convert_bytes<uint32_t>(raw_bytes);
 
     std::cout << "UVM version: " << uvm_version << std::endl;
 }
@@ -54,7 +52,7 @@ void uvm_file::parse_header(){
         //token found in the rigth position
         head_start_ptr = raw_bytes + 4;
 
-        head_size = convert_bytes_32(head_start_ptr + 1);
+        head_size = convert_bytes<uint32_t>(head_start_ptr + 1);
 
         head_end_ptr = head_start_ptr + head_size;
 
@@ -63,9 +61,11 @@ void uvm_file::parse_header(){
 
         }else{
             //token end error
+            log_error("header end token not found\n",0);
         }
     }else{
         //token start error
+        log_error("header start token not found\n",0);
     }
 }
 
