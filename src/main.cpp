@@ -35,7 +35,6 @@ int main(int argc,char** argv){
     if(argc == 1){
         //std::cout << "not enough args insert a UVM file\n";
         log_error("not enough args insert a UVM file\n",0);
-        reset_console_color();
         return -1;
     }
 
