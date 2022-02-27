@@ -1,5 +1,9 @@
 #include <uvm_div.h>
 
+uvm_div::uvm_div() noexcept {
+
+}
+
 uvm_div::uvm_div(uint8_t* div_start,uvm_token token_identifier,uint8_t* buffer){
 
     div_start_ptr = div_start;
@@ -22,12 +26,21 @@ uvm_div::uvm_div(uint8_t* div_start,uvm_token token_identifier,uint8_t* buffer){
         if(*div_end_ptr == end_token){
             //correct start and end token
 
+            div_content_buf = div_start_ptr + sizeof(uint32_t);
+
+            //remove 4 bytes for the size and one to remove the end token from the buffer
+            div_content_size = div_size - 5;
+
         }else{
             //wrong token
-            log_errorf("wrong end token value:%E @ %E",0,end_token,div_end_ptr - buffer);
+            log_errorf("wrong end token value:%i @ %i",0,end_token,div_end_ptr - buffer);
         }
     }else{
         //wrong token
-        log_errorf("wrong start token value:%E @ %E",0,start_token,div_start_ptr - buffer);
+        log_errorf("wrong start token value:%i @ %i",0,start_token,div_start_ptr - buffer);
     }
+}
+
+void uvm_div::log(){
+    log_messagef("start token ptr: %x\nend token ptr: %x\ndiv content ptr: %x\ndiv size: %i\ndiv content size: %i\n",0,div_start_ptr,div_end_ptr,div_content_buf,div_size,div_content_size);
 }
