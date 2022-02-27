@@ -1,5 +1,7 @@
 #ignore compilation folder
 bin/
+#ignore .vscode folder
+.vscode/
 #ignore object files
 *.o
 #ignore executable
