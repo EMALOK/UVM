@@ -19,9 +19,9 @@ int main(int argc,char** argv){
     }
 
 
-    // uvm b c d e
+    // uvm_exec_call uvm_main_file_path c d e
 
-    // b
+    // uvm_main_file_path
     char* uvm_file_path = argv[1];
 
     // c d e

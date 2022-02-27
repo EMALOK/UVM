@@ -4,6 +4,7 @@
 #include <fstream>
 
 #include <uvm_helper.h>
+#include <uvm_div.h>
 
 uvm_file::uvm_file(char* _file_path){
     //open file
@@ -44,29 +45,7 @@ void uvm_file::parse_file(){
 }
 
 void uvm_file::parse_header(){
-    uint8_t* head_start_ptr;
-    uint32_t head_size;
-    uint8_t* head_end_ptr;
-
-    if(raw_bytes[4] == get_start_token(HEADER)){
-        //token found in the rigth position
-        head_start_ptr = raw_bytes + 4;
-
-        head_size = convert_bytes<uint32_t>(head_start_ptr + 1);
-
-        head_end_ptr = head_start_ptr + head_size;
-
-        //if the value at the end of the header is equal to the end_header token
-        if(*head_end_ptr == get_end_token(HEADER)){
-
-        }else{
-            //token end error
-            log_error("header end token not found\n",0);
-        }
-    }else{
-        //token start error
-        log_error("header start token not found\n",0);
-    }
+    uvm_div header_div(raw_bytes + 4,HEADER,raw_bytes);
 }
 
 void uvm_file::parse_body(){

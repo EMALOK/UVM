@@ -1,6 +1,8 @@
 #include <cstddef>
 #include <cstdint>
 
+#include <uvm_div.h>
+
 class uvm_file{
 public:
 
