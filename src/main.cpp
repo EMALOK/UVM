@@ -3,26 +3,6 @@
 #include <uvm_file.h>
 #include <uvm_helper.h>
 
-//#region [ rgba(0,200,0,0.1)]
-/*
-
-TODOs
-
-*.uvm file structure
-    uvm version
-    entry point index (see csf list)
-    cfs list class/struct/functions pointer in the body section
-    body
-        structs
-        classes
-            methods
-        functions
-
-in file pointing are relative to the father in the tree
-
-*/
-//#endregion
-
 //#region [ rgba(0,0,200,0.1)]
 int main(int argc,char** argv){
 
