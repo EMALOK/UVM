@@ -5,9 +5,11 @@
 
 //#region [rgba(0,200,0,0.1)]
 // function used to convet the data from the buffer to the actual value
+
+//TODO convert using templates
 uint16_t convert_bytes_16(uint8_t* buf) {
     uint16_t res = 0;
-    for(int i = 1;i >= 0;i--){
+    for(int i = sizeof(uint16_t) - 1;i >= 0;i--){
         res <<= 8;
         res += buf[i];
     }
@@ -16,7 +18,7 @@ uint16_t convert_bytes_16(uint8_t* buf) {
 
 uint32_t convert_bytes_32(uint8_t* buf){
     uint16_t res = 0;
-    for(int i = 3;i >= 0;i--){
+    for(int i = sizeof(uint32_t) - 1;i >= 0;i--){
         res <<= 8;
         res += buf[i];
     }
@@ -25,7 +27,7 @@ uint32_t convert_bytes_32(uint8_t* buf){
 
 uint64_t convert_bytes_64(uint8_t* buf){
     uint16_t res = 0;
-    for(int i = 7;i >= 0;i--){
+    for(int i = sizeof(uint64_t) - 1;i >= 0;i--){
         res <<= 8;
         res += buf[i];
     }

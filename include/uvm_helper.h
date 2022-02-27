@@ -25,6 +25,8 @@ enum ansi_color : uint8_t {
 
 const uint8_t BG_offset = 10;
 
+//#region [rgba(255,69,0,0.1)]
+//logging functions
 void log_message(std::string message,uint32_t message_log_level);
 void log_warning(std::string message,uint32_t message_log_level);
 void log_error(std::string message,uint32_t message_log_level);
@@ -60,3 +62,4 @@ void set_console_color(ansi_color FG,ansi_color BG);
 void set_console_color(ansi_color FG,bool bright_FG,ansi_color BG,bool bright_BG);
 
 void reset_console_color();
+//#endregion
