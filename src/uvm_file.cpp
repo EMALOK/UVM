@@ -35,11 +35,11 @@ uvm_file::uvm_file(char* _file_path){
 
     log_message("divving body\n",0);
 
-    body_div = uvm_div(header_div.div_end_ptr + 1,BODY,raw_bytes);
+    body_div = uvm_div(header_div.next_div,BODY,raw_bytes);
 
     log_message("divving footer\n",0);
 
-    footer_div = uvm_div(body_div.div_end_ptr + 1,FOOTER,raw_bytes);
+    footer_div = uvm_div(body_div.next_div,FOOTER,raw_bytes);
 }
 
 void uvm_file::parse_version(){

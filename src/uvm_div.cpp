@@ -31,13 +31,15 @@ uvm_div::uvm_div(uint8_t* div_start,uvm_token token_identifier,uint8_t* buffer){
             //remove 4 bytes for the size and one to remove the end token from the buffer
             div_content_size = div_size - 5;
 
+            next_div =  div_end_ptr + 1;
+
         }else{
             //wrong token
-            log_errorf("wrong end token value:%i @ %i",0,end_token,div_end_ptr - buffer);
+            log_errorf("wrong end token value expected: %x got %x @ %i\n",0,end_token,*div_end_ptr,div_end_ptr - buffer);
         }
     }else{
         //wrong token
-        log_errorf("wrong start token value:%i @ %i",0,start_token,div_start_ptr - buffer);
+    log_errorf("wrong start token value expected: %x got %x @ %i\n",0,start_token,*div_start_ptr,div_start_ptr - buffer);
     }
 }
 

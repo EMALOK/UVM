@@ -18,6 +18,9 @@ run: clean all
 $(BIN)/$(EXECUTABLE): $(SRC)/*.cpp
 	$(CXX) $(CXX_FLAGS) -I$(INCLUDE) $^ -o $@ $(LIBRARIES)
 
+builder: $(filter-out src/main.cpp, $(wildcard src/*.cpp))
+	$(CXX) $(CXX_FLAGS) -I$(INCLUDE) $^ -o $(BIN)/$@ $(LIBRARIES)
+
 clean:
 	-rm $(BIN)/*
 
