@@ -24,8 +24,6 @@ uvm_file::uvm_file(char* _file_path){
     //read file
     infile.read((char*)raw_bytes, buffer_size);
 
-    parse_version();
-
     //parse file
     log_messagef("starting parsing file: %s",0,file_path.c_str());
 
@@ -40,13 +38,4 @@ uvm_file::uvm_file(char* _file_path){
     log_message("divving footer\n",0);
 
     footer_div = uvm_div(body_div.next_div,FOOTER,raw_bytes);
-}
-
-void uvm_file::parse_version(){
-    //version parse
-
-    uvm_version = convert_bytes<uint32_t>(raw_bytes);
-
-    // std::cout << "UVM version: " << uvm_version << std::endl;
-    log_messagef("UVM version: %i",0,uvm_version);
 }

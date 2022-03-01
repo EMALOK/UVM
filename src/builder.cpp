@@ -3,6 +3,7 @@
 #include <fstream>
 #include <vector>
 #include <iterator>
+#include <uvm_helper.h>
 
 int main(int argc,char** argv){
     if(argc != 3){
@@ -17,7 +18,7 @@ int main(int argc,char** argv){
 
 
     std::vector<std::string> source_file = std::vector<std::string>(std::istream_iterator<std::string>(source_stream),std::istream_iterator<std::string>());
-    
+    std::vector<uint8_t> output_buffer;
 
     for(int i = 0; i < source_file.size();i++){
         std::string line = source_file[i];
@@ -38,6 +39,22 @@ int main(int argc,char** argv){
             //remove the space
             line.erase(line.begin() + tab_pos);
         }
+
+        //is block end?
+        if(line[0] == '\\'){
+            //end
+            //remove back slash
+            line.erase(line.begin());
+
+            if(line == "HEADER"){
+                
+            }
+
+        }else{
+            //start
+        }
+
+
     }
 
 }

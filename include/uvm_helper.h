@@ -9,7 +9,7 @@
 static uint32_t log_level = 1;
 
 template<typename T>
-T convert_bytes(uint8_t* buf){
+T convert_bytes(uint8_t* buf,T ciao){
     T res = 0;
     for(int i = sizeof(T) - 1;i >= 0;i--){
         res <<= 8;

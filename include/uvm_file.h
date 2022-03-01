@@ -9,8 +9,6 @@ public:
     size_t buffer_size;
     uint8_t* raw_bytes;
 
-    uint32_t uvm_version;
-
     std::string file_path;
 
     uvm_div header_div;
@@ -21,6 +19,4 @@ public:
 
 
 private:
-
-    void parse_version();
 };
