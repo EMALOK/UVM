@@ -71,28 +71,3 @@ void set_console_color(ansi_color FG,bool bright_FG,ansi_color BG,bool bright_BG
 
 void reset_console_color();
 //#endregion
-
-//#region [rgba(0,0,200,0.1)]
-//token utils
-
-// range 0 - 127
-enum uvm_token : uint8_t {
-    NULL_TOKEN = 0,
-    HEADER,
-    BODY,
-    FOOTER,
-    LIST,
-    STRING,
-    VAR,
-    FUNCTION,
-    STRUCT,
-    CLASS,
-    PRIVATE,
-    PUBLIC
-};
-
-uint8_t get_start_token(uvm_token token);
-
-uint8_t get_end_token(uvm_token token);
-
-//#endregion
