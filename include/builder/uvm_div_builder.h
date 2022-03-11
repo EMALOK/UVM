@@ -18,4 +18,4 @@ public:
 
     std::vector<uint8_t> get_data();
 
-}
+};

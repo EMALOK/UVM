@@ -2,6 +2,7 @@
 
 #include <cstdint>
 #include <string>
+#include <climits>
 
 //the more the log_level is higher more verbose the message wil be
 //eg. ll=0 no message
@@ -9,7 +10,7 @@
 static uint32_t log_level = 1;
 
 template<typename T>
-T convert_bytes(uint8_t* buf,T ciao){
+T convert_bytes(uint8_t* buf){
     T res = 0;
     for(int i = sizeof(T) - 1;i >= 0;i--){
         res <<= 8;
@@ -17,7 +18,13 @@ T convert_bytes(uint8_t* buf,T ciao){
     }
     return res;
 }
-
+/*
+uint8_t* swap_endian(uint8_t* buf,size_t size){
+    for(int i = 0; i < (size - (size % 2)) / 2;i++){
+        std::swap(buf[i],buf[size - i]);
+    }
+}
+*/
 //#region [rgba(255,69,0,0.1)]
 //logging functions
 
