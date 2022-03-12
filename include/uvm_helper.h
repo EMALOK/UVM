@@ -2,14 +2,14 @@
 
 #include <cstdint>
 #include <string>
+#include <memory>
 
 //the more the log_level is higher more verbose the message wil be
 //eg. ll=0 no message
 //eg. ll=10 lots of messages
 static uint32_t log_level = 1;
 
-template<typename T>
-T convert_bytes(uint8_t* buf,T ciao){
+template<typename T> inline T convert_bytes(uint8_t* buf){
     T res = 0;
     for(int i = sizeof(T) - 1;i >= 0;i--){
         res <<= 8;
