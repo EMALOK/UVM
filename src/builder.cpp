@@ -1,60 +1,39 @@
 #include <iostream>
-#include <istream>
 #include <fstream>
-#include <vector>
-#include <iterator>
+#include <builder/uvm_div_builder.h>
 #include <uvm_helper.h>
 
 int main(int argc,char** argv){
-    if(argc != 3){
-        std::cout << "wrong args need only 2";
+
+    if(argc != 2){
+        return -1;
     }
 
-    char* source = argv[1];
-    char* uvm_obj = argv[2];
+    std::vector<uint8_t> header_data_buf = {
+        'h','e','a','d'
+    };
+    std::vector<uint8_t> body_data_buf = {
+        'b','o','d','y'
+    };
+    std::vector<uint8_t> footer_data_buf = {
+        'f','o','o','t'
+    };
 
-    std::ifstream source_stream(source);
-    std::fstream uvm_obj_stream(uvm_obj,std::ios_base::binary);
+    uvm_div_builder header(header_data_buf);
+    uvm_div_builder body(body_data_buf);
+    uvm_div_builder footer(footer_data_buf);
 
+    std::vector<uint8_t> out_header = header.get_data();
+    std::vector<uint8_t> out_body = body.get_data();
+    std::vector<uint8_t> out_footer = footer.get_data();
 
-    std::vector<std::string> source_file = std::vector<std::string>(std::istream_iterator<std::string>(source_stream),std::istream_iterator<std::string>());
-    std::vector<uint8_t> output_buffer;
+    std::ofstream fout;
+    fout.open(argv[1], std::ios::binary | std::ios::out);
 
-    for(int i = 0; i < source_file.size();i++){
-        std::string line = source_file[i];
+    fout.write((const char *)out_header.data(),out_header.size());
+    fout.write((const char *)out_body.data(),out_body.size());
+    fout.write((const char *)out_footer.data(),out_footer.size());
 
-        //remove all tabs and spaces   
-        //while there is a tab
-        while(line.find("\t",0) != std::string::npos){
-            //find the tab
-            size_t tab_pos = line.find("\t",0);
-            //remove the tab
-            line.erase(line.begin() + tab_pos);
-        }
-
-        //while there is a space
-        while(line.find(" ",0) != std::string::npos){
-            //find the space
-            size_t tab_pos = line.find(" ",0);
-            //remove the space
-            line.erase(line.begin() + tab_pos);
-        }
-
-        //is block end?
-        if(line[0] == '\\'){
-            //end
-            //remove back slash
-            line.erase(line.begin());
-
-            if(line == "HEADER"){
-                
-            }
-
-        }else{
-            //start
-        }
-
-
-    }
+    fout.close();
 
 }

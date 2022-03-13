@@ -12,11 +12,9 @@ public:
     uint8_t* next_div = nullptr;
     size_t div_size = 0;
     size_t div_content_size = 0;
-    uvm_token token = NULL_TOKEN;
 
     uvm_div() noexcept;
 
-    uvm_div(uint8_t* div_start,uvm_token token_identifier,uint8_t* buffer);
-    void log();
+    uvm_div(uint8_t* div_start,uint8_t* buffer);
 private:
 };
