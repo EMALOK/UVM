@@ -16,7 +16,7 @@ BUIL_INC_DIR := include/builder
 MAIN_SRC_EXCLUDE_FILES := src/builder.cpp
 
 #builder exe excluded files
-BUIL_EXE_EXCLUDE_FILES := main.cpp
+BUIL_EXE_EXCLUDE_FILES := src/main.cpp
 
 #the complete set of files without excluded files
 MAIN_SRC_FILES := $(filter-out $(MAIN_SRC_EXCLUDE_FILES),$(shell find $(MAIN_SRC_DIR) -name '*.cpp'))
