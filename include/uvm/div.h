@@ -1,10 +1,9 @@
 #pragma once
 
-#include <uvm_helper.h>
 #include <cstddef>
 #include <cstdint>
 
-class uvm_div {
+class div {
 public:
     uint8_t* div_start_ptr = nullptr;
     uint8_t* div_end_ptr = nullptr;
@@ -13,8 +12,8 @@ public:
     size_t div_size = 0;
     size_t div_content_size = 0;
 
-    uvm_div() noexcept;
+    div() noexcept;
 
-    uvm_div(uint8_t* div_start,uint8_t* buffer);
+    div(uint8_t* div_start,uint8_t* buffer);
 private:
 };

@@ -1,9 +1,7 @@
 #include <cstddef>
 #include <cstdint>
 
-#include <uvm_div.h>
-
-class uvm_file{
+class file{
 public:
 
     size_t buffer_size;
@@ -11,7 +9,7 @@ public:
 
     std::string file_path;
 
-    uvm_file(char* _file_path);
+    file(char* _file_path);
 
 
 private:

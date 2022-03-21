@@ -24,6 +24,7 @@ uvm_file::uvm_file(char* _file_path){
     //read file
     infile.read((char*)raw_bytes, buffer_size);
 
+    infile.close();
     //parse file
     log_messagef("starting parsing file: %s",0,file_path.c_str());
 

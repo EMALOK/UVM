@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <builder/uvm_div_builder.h>
-#include <uvm_helper.h>
+#include <helper.h>
 
 int main(int argc,char** argv){
 
