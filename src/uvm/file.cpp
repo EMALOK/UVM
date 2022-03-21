@@ -6,6 +6,8 @@
 #include <helper.h>
 #include <uvm/div.h>
 
+namespace uvm {
+
 file::file(char* _file_path){
 
     file_path = _file_path;
@@ -42,3 +44,5 @@ file::file(char* _file_path){
     footer_div = uvm_div(body_div.next_div,FOOTER,raw_bytes);
     */
 }
+
+};

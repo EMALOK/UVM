@@ -33,7 +33,6 @@ int main(int argc,char** argv){
     //std::cout << "reading " << uvm_file_path << "\n";
     log_messagef("reading file: %s",0,uvm_file_path);
 
-
-    file uvmFile(uvm_file_path);
+    uvm::file uvmFile(uvm_file_path);
 }
 //#endregion

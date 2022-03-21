@@ -3,6 +3,10 @@
 
 #include <string>
 
+#include <uvm/div.h>
+
+namespace uvm {
+
 class file{
 public:
 
@@ -11,8 +15,14 @@ public:
 
     std::string file_path;
 
+    div header;
+    div body;
+    div footer;
+
     file(char* _file_path);
 
 
 private:
+};
+
 };

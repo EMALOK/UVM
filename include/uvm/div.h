@@ -3,6 +3,8 @@
 #include <cstddef>
 #include <cstdint>
 
+namespace uvm {
+
 class div {
 public:
     uint8_t* div_start_ptr = nullptr;
@@ -16,4 +18,6 @@ public:
 
     div(uint8_t* div_start,uint8_t* buffer);
 private:
+};
+
 };
