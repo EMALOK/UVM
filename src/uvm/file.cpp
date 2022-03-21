@@ -1,12 +1,12 @@
-#include "uvm_file.h"
+#include <uvm/file.h>
 
 #include <iostream>
 #include <fstream>
 
-#include <uvm_helper.h>
-#include <uvm_div.h>
+#include <helper.h>
+#include <uvm/div.h>
 
-uvm_file::uvm_file(char* _file_path){
+file::file(char* _file_path){
 
     file_path = _file_path;
 

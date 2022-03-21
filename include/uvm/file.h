@@ -1,6 +1,8 @@
 #include <cstddef>
 #include <cstdint>
 
+#include <string>
+
 class file{
 public:
 
