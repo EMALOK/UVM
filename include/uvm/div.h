@@ -19,15 +19,13 @@ public:
     //the position of a possible div that follows
     uint8_t* next_div = nullptr;
 
-    //the size of entire div
+    //the size of entire div defined as div_start_ptr + div_size = div_end_ptr
     size_t div_size = 0;
 
-    //the size of the content insidee of the div
+    //the size of the content inside of the div
     size_t div_content_size = 0;
 
-    div() noexcept;
-
-    div(uint8_t* div_start,uint8_t* buffer);
+    div(uint8_t* div_start);
 private:
 };
 

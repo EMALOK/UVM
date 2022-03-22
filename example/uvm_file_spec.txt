@@ -1,3 +1,19 @@
+
+div_file
+    div_header
+    div_body
+    div_footer
+
+
+
+
+
+
+
+
+
+
+
 header
     header_end_offset uint32_t
     list of string

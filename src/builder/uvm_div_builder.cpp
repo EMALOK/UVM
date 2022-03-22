@@ -50,6 +50,7 @@ std::vector<uint8_t> uvm_div_builder::get_data(){
     }else{
         //data
 
+        //BUG the size in the div must be the size of the data + 4 to account the data size itself
         //fetch the buffer size
         size_t data_size = data.size();
 
