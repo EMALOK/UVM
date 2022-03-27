@@ -1,19 +1,19 @@
-#include <array>
+#include <vector>
 #include <memory>
 #include <type_traits>
 #include <iomanip>
 
-template< typename T > uint8_t*  to_bytes( const T& object )
+template< typename T > std::vector<uint8_t>  to_bytes( const T& object )
 {
     //create buffer
-    uint8_t* bytes = malloc(sizeof(T));
+    std::vector<uint8_t> bytes(sizeof(T));
 
     //get the start and end of the object
     const uint8_t* begin = reinterpret_cast< const uint8_t* >( std::addressof(object) ) ;
     const uint8_t* end = begin + sizeof(T) ;
 
     //copy the data from the object to the buffer
-    std::copy( begin, end, bytes ) ;
+    std::copy( begin, end, bytes.begin() ) ;
 
     return bytes ;
 }

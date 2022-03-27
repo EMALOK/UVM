@@ -27,21 +27,17 @@ std::vector<uint8_t> uvm_div_builder::get_data(){
 
         for(int i = 0; i < divs.size();i++){
             divs_buffers[i] = divs[i].get_data();
+
             // add 1 to get the actual size in bytes
-            buffers_total_size += divs_buffers[i].size() + 1;
+            buffers_total_size += divs_buffers[i].size();
         }
 
-        // account for the data_size itself
-        //buffers_total_size += 3;
+        //it adds 3 because div_start_ptr + data_size = div_end_ptr
+        buffers_total_size += 3;
 
         //convert the data_size to a buffer
-        std::vector<uint8_t> buf_data_size(4);
+        std::vector<uint8_t> buf_data_size = to_bytes(buffers_total_size);
 
-        //maybe needs to be inverted eg. 0 -> 3
-        buf_data_size[0] = (&buffers_total_size)[0];
-        buf_data_size[1] = (&buffers_total_size)[1];
-        buf_data_size[2] = (&buffers_total_size)[2];
-        buf_data_size[3] = (&buffers_total_size)[3];
 
         //insert the data_size
         out_data.insert(out_data.end(),buf_data_size.begin(),buf_data_size.end());
@@ -58,16 +54,8 @@ std::vector<uint8_t> uvm_div_builder::get_data(){
         //it adds 3 because div_start_ptr + data_size = div_end_ptr
         size_t data_size = data.size() + 3;
 
-        std::cout << data_size << std::endl;
-
         //convert the data_size to a buffer
-        std::vector<uint8_t> buf_data_size(4);
-
-        //maybe needs to be inverted eg. 0 -> 3
-        buf_data_size[0] = data_size >> (0 * 8);
-        buf_data_size[1] = data_size >> (1 * 8);
-        buf_data_size[2] = data_size >> (2 * 8);
-        buf_data_size[3] = data_size >> (3 * 8);
+        std::vector<uint8_t> buf_data_size = to_bytes(data_size);
 
         //insert the data_size
         out_data.insert(out_data.end(),buf_data_size.begin(),buf_data_size.end());
