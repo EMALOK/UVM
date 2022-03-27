@@ -27,8 +27,12 @@ std::vector<uint8_t> uvm_div_builder::get_data(){
 
         for(int i = 0; i < divs.size();i++){
             divs_buffers[i] = divs[i].get_data();
-            buffers_total_size += divs_buffers[i].size();
+            // add 1 to get the actual size in bytes
+            buffers_total_size += divs_buffers[i].size() + 1;
         }
+
+        // account for the data_size itself
+        //buffers_total_size += 3;
 
         //convert the data_size to a buffer
         std::vector<uint8_t> buf_data_size(4);
@@ -50,9 +54,9 @@ std::vector<uint8_t> uvm_div_builder::get_data(){
     }else{
         //data
 
-        //BUG the size in the div must be the size of the data + 4 to account the data size itself
         //fetch the buffer size
-        size_t data_size = data.size();
+        //it adds 3 because div_start_ptr + data_size = div_end_ptr
+        size_t data_size = data.size() + 3;
 
         std::cout << data_size << std::endl;
 

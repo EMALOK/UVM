@@ -26,6 +26,8 @@ public:
     size_t div_content_size = 0;
 
     div(uint8_t* div_start);
+
+    div() noexcept = default;
 private:
 };
 

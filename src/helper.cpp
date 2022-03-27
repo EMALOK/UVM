@@ -1,7 +1,5 @@
 #include <helper.h>
 #include <iostream>
-#include <memory>
-#include <stdexcept>
 
 //#region [rgba(255,69,0,0.1)]
 //logging functions

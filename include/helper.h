@@ -1,8 +1,10 @@
 #pragma once
 
-#include <cstdint>
+#include <stdint.h>
 #include <string>
 #include <climits>
+#include <memory>
+#include <stdexcept>
 
 //the more the log_level is higher more verbose the message wil be
 //eg. ll=0 no message

@@ -1,4 +1,4 @@
-#include <cstddef>
+#include <stdint.h>
 #include <vector>
 
 class uvm_div_builder;

@@ -23,16 +23,20 @@ int main(int argc,char** argv){
     uvm_div_builder body(body_data_buf);
     uvm_div_builder footer(footer_data_buf);
 
-    std::vector<uint8_t> out_header = header.get_data();
-    std::vector<uint8_t> out_body = body.get_data();
-    std::vector<uint8_t> out_footer = footer.get_data();
+    std::vector<uvm_div_builder> divs;
+
+    divs.push_back(header);
+    divs.push_back(body);
+    divs.push_back(footer);
+
+    uvm_div_builder file_div(divs);
+
+    std::vector<uint8_t> out_file = file_div.get_data();
 
     std::ofstream fout;
     fout.open(argv[1], std::ios::binary | std::ios::out);
 
-    fout.write((const char *)out_header.data(),out_header.size());
-    fout.write((const char *)out_body.data(),out_body.size());
-    fout.write((const char *)out_footer.data(),out_footer.size());
+    fout.write((const char *)out_file.data(),out_file.size());
 
     fout.close();
 

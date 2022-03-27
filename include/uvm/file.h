@@ -3,7 +3,7 @@
 
 #include <string>
 
-#include <uvm/div.h>
+#include <uvm/div_types/div_file.h>
 
 namespace uvm {
 
@@ -15,12 +15,9 @@ public:
 
     std::string file_path;
 
-    div header;
-    div body;
-    div footer;
+    div_file file_div;
 
     file(char* _file_path);
-
 
 private:
 };
