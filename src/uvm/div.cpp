@@ -8,7 +8,7 @@ div::div(uint8_t* _div_start){
     div_start_ptr = _div_start;
     
     //read the div size
-    div_size = convert_bytes<size_t>(_div_start);
+    div_size = from_bytes<size_t>(div_start_ptr);
 
     //set the div end
     div_end_ptr = div_start_ptr + div_size;

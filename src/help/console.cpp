@@ -1,8 +1,6 @@
-#include <helper.h>
 #include <iostream>
+#include <help/console.h>
 
-//#region [rgba(255,69,0,0.1)]
-//logging functions
 void log_message(std::string message,uint32_t message_log_level){
     reset_console_color();
     if(message_log_level <= log_level){
@@ -38,5 +36,3 @@ void set_console_color(ansi_color FG,bool bright_FG,ansi_color BG,bool bright_BG
 void reset_console_color(){
     printf("%c[%d;%dm",0x1B,default_color,default_color + BG_offset);
 }
-
-//#endregion
