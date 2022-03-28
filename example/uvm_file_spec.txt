@@ -7,15 +7,7 @@ div_file
 
 
 
-
-
-
-
-
-
-
 header
-    header_end_offset uint32_t
     list of string
         file_path_of_dependencies
     end_list
