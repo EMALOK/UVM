@@ -25,8 +25,9 @@ public:
         }
 
     }
-private:
+    
     std::vector<div_type> contents;
+private:
 
 };
 
