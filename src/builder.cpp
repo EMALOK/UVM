@@ -10,13 +10,15 @@ int main(int argc,char** argv){
     }
 
     std::vector<uint8_t> header_data_buf = {
-        'h','e','a','d','l','o','l'
+        'h','e','a','d'
     };
+
     std::vector<uint8_t> body_data_buf = {
         'b','o','d','y'
     };
+
     std::vector<uint8_t> footer_data_buf = {
-        'f','o','o','t','p','o','g'
+        'f','o','o','t'
     };
 
     uvm_div_builder header(header_data_buf);
