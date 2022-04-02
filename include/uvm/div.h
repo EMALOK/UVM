@@ -20,10 +20,10 @@ public:
     uint8_t* next_div = nullptr;
 
     //the size of entire div defined as div_start_ptr + div_size = div_end_ptr
-    size_t div_size = 0;
+    uint32_t div_size = 0;
 
     //the size of the content inside of the div
-    size_t div_content_size = 0;
+    uint32_t div_content_size = 0;
 
     div(uint8_t* div_start);
 

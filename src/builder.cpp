@@ -9,8 +9,16 @@ int main(int argc,char** argv){
         return -1;
     }
 
-    std::vector<uint8_t> header_data_buf = {
-        'h','e','a','d'
+    std::vector<uint8_t> deps1 = {
+        'd','e','p','s','1','\0'
+    };
+
+    std::vector<uint8_t> deps2 = {
+        'd','e','p','s','2','\0'
+    };
+
+    std::vector<uint8_t> deps3 = {
+        'd','e','p','s','3','\0'
     };
 
     std::vector<uint8_t> body_data_buf = {
@@ -21,17 +29,16 @@ int main(int argc,char** argv){
         'f','o','o','t'
     };
 
-    uvm_div_builder header(header_data_buf);
+    //deps list in the header
+    uvm_div_builder header_deps_list({deps1,deps2,deps3});
+
+
+    uvm_div_builder header({header_deps_list});
     uvm_div_builder body(body_data_buf);
     uvm_div_builder footer(footer_data_buf);
 
-    std::vector<uvm_div_builder> divs;
-
-    divs.push_back(header);
-    divs.push_back(body);
-    divs.push_back(footer);
-
-    uvm_div_builder file_div(divs);
+    //final file
+    uvm_div_builder file_div({header,body,footer});
 
     std::vector<uint8_t> out_file = file_div.get_data();
 

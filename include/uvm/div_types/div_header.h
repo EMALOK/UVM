@@ -2,6 +2,9 @@
 
 #include <uvm/div.h>
 
+#include <uvm/div_types/div_list.h>
+#include <uvm/div_types/div_string.h>
+
 namespace uvm
 {
     
@@ -11,6 +14,7 @@ public:
 
     div_header() noexcept = default;
 
+    div_list<div_string> file_dependencies;
 
 };
 

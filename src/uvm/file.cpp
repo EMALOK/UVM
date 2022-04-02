@@ -8,7 +8,7 @@
 
 namespace uvm {
 
-file::file(char* _file_path){
+file::file(char* _file_path) : file_div(raw_bytes){
 
     file_path = _file_path;
 
@@ -29,8 +29,6 @@ file::file(char* _file_path){
     infile.close();
     //parse file
     log_messagef("starting parsing file: %s",0,file_path.c_str());
-
-    file_div = div_file(raw_bytes);
 };
 
 };

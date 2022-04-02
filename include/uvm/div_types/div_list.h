@@ -13,6 +13,10 @@ public:
         //compile time assert
         //static_assert(std::is_base_of(div,div_type)::value,"div_type is not derived out of div\n");
 
+        //empty list
+        if(div_content_size == 0)
+            return;
+
         while(1){
             div_type div_c(div_content_buf);
 
