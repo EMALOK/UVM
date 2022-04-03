@@ -24,9 +24,9 @@ div::div(uint8_t* _div_start){
     //set next div
     div_next_ptr = div_end_ptr + 1;
 
-    printf("\ndiv_start_ptr    = %u\n",div_start_ptr);
-    printf("div_content_size = %u\n",div_content_size);
-    printf("div_next_ptr     = %u\n\n",div_next_ptr);
+    //printf("\ndiv_start_ptr    = %u\n",div_start_ptr);
+    //printf("div_content_size = %u\n",div_content_size);
+    //printf("div_next_ptr     = %u\n\n",div_next_ptr);
 
 }
 

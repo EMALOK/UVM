@@ -24,8 +24,8 @@ public:
 
             contents.push_back(div_c);
 
-            printf("div_c->div_next_ptr\t = %u\n",div_c->div_next_ptr);
-            printf("div_end_ptr\t\t = %u\n",div_end_ptr);
+            //printf("div_c->div_next_ptr\t = %u\n",div_c->div_next_ptr);
+            //printf("div_end_ptr\t\t = %u\n",div_end_ptr);
 
             //exit condition
             if(div_c->div_next_ptr > div_end_ptr)

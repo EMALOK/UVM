@@ -5,7 +5,7 @@ namespace uvm
 
 div_header::div_header(uint8_t* _div_start) : div(_div_start), file_dependencies(div_content_ptr)
 {
-    printf("div_header\n");
+    //printf("div_header\n");
 
 }
 
