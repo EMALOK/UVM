@@ -15,9 +15,11 @@ public:
 
     std::string file_path;
 
-    div_file file_div;
+    div_file* file_div_ptr;
 
     file(char* _file_path);
+
+    ~file();
 
 private:
 };

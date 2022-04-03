@@ -34,5 +34,9 @@ int main(int argc,char** argv){
     log_messagef("reading file: %s",0,uvm_file_path);
 
     uvm::file uvmFile(uvm_file_path);
+
+    log_message("done!",0);
+
+    uvmFile.file_div_ptr->print();
 }
 //#endregion

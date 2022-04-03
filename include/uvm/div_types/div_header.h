@@ -16,6 +16,7 @@ public:
 
     div_list<div_string> file_dependencies;
 
+    void print(int depth = 0);
 };
 
 } // namespace uvm

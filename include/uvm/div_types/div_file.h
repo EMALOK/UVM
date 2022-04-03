@@ -17,6 +17,7 @@ public:
     div_body body;
     div_footer footer;
 
+    void print(int depth = 0);
 };
 
 } // namespace uvm

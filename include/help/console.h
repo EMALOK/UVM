@@ -54,3 +54,5 @@ void set_console_color(ansi_color FG,ansi_color BG);
 void set_console_color(ansi_color FG,bool bright_FG,ansi_color BG,bool bright_BG);
 
 void reset_console_color();
+
+bool is_printable(char c);

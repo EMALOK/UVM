@@ -10,6 +10,7 @@ public:
 
     std::string content_string;
 
+    void print(int depth = 0);
 private:
 };
 

@@ -13,6 +13,7 @@ int main(int argc,char** argv){
         'd','e','p','s','1','\0'
     };
 
+
     std::vector<uint8_t> deps2 = {
         'd','e','p','s','2','\0'
     };
@@ -29,11 +30,17 @@ int main(int argc,char** argv){
         'f','o','o','t'
     };
 
+
+    
+    uvm_div_builder div_deps1(deps1);
+    uvm_div_builder div_deps2(deps2);
+    uvm_div_builder div_deps3(deps3);
+
     //deps list in the header
-    uvm_div_builder header_deps_list({deps1,deps2,deps3});
+    uvm_div_builder header_deps_list({div_deps1,div_deps2,div_deps3});
 
 
-    uvm_div_builder header({header_deps_list});
+    uvm_div_builder header(header_deps_list.get_data());
     uvm_div_builder body(body_data_buf);
     uvm_div_builder footer(footer_data_buf);
 

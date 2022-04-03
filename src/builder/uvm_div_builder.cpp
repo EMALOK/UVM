@@ -31,14 +31,11 @@ std::vector<uint8_t> uvm_div_builder::get_data(){
             // add 1 to get the actual size in bytes
             buffers_total_size += divs_buffers[i].size();
 
-            std::cout << "iter: " << buffers_total_size << std::endl;
+            //std::cout << "iter: " << buffers_total_size << std::endl;
 
         }
 
-        //it adds 3 because div_start_ptr + data_size = div_end_ptr
-        buffers_total_size += 3;
-
-        std::cout << "tot iter: " << buffers_total_size << std::endl;
+        std::cout << "size tot: " << buffers_total_size << std::endl;
 
         //convert the data_size to a buffer
         std::vector<uint8_t> buf_data_size = to_bytes(buffers_total_size);
@@ -56,10 +53,9 @@ std::vector<uint8_t> uvm_div_builder::get_data(){
         //data
 
         //fetch the buffer size
-        //it adds 3 because div_start_ptr + data_size = div_end_ptr
-        uint32_t data_size = data.size() + 3;
+        uint32_t data_size = data.size();
 
-        std::cout << "data_size: " << data_size << std::endl;
+        std::cout << "size sin: " << data_size << std::endl;
 
         //convert the data_size to a buffer
         std::vector<uint8_t> buf_data_size = to_bytes(data_size);
@@ -69,8 +65,6 @@ std::vector<uint8_t> uvm_div_builder::get_data(){
 
         //insert the data
         out_data.insert(out_data.end(),data.begin(),data.end());
-
-        std::cout << "out_data: " << out_data.size() << std::endl;
     }
 
     return out_data;

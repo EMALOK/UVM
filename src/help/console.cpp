@@ -36,3 +36,7 @@ void set_console_color(ansi_color FG,bool bright_FG,ansi_color BG,bool bright_BG
 void reset_console_color(){
     printf("%c[%d;%dm",0x1B,default_color,default_color + BG_offset);
 }
+
+bool is_printable(char c){
+    return c >= 32 && c <= 126;
+}
